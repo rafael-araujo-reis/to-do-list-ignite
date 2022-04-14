@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import '../styles/tasklist.scss'
+import '../styles/tasklist.scss';
 
-import { FiTrash, FiCheckSquare } from 'react-icons/fi'
+import { FiTrash, FiCheckSquare } from 'react-icons/fi';
 
 interface Task {
   id: number;
@@ -21,10 +21,10 @@ export function TaskList() {
         id: Math.trunc(Math.random() * 100),
         title: newTaskTitle,
         isComplete: false
-      }
+      };
 
-      setTasks([...tasks, newTask])
-      setNewTaskTitle('')
+      setTasks([...tasks, newTask]);
+      setNewTaskTitle('');
     }
   }
 
@@ -33,13 +33,13 @@ export function TaskList() {
 
     const taskEdit = tasks.map(task => task.id === id ? {
       ...task, isComplete: !task.isComplete
-    } : task)
+    } : task);
 
-    setTasks(taskEdit)
+    setTasks(taskEdit);
   }
 
   function handleRemoveTask(id: number) {
-    setTasks(tasks.filter(task => task.id !== id))
+    setTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
@@ -86,5 +86,5 @@ export function TaskList() {
         </ul>
       </main>
     </section>
-  )
+  );
 }
